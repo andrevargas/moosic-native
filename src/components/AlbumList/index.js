@@ -5,17 +5,17 @@ import Loading from '../Loading';
 import styles from './styles';
 
 const renderItem = ({ item }) => <Album album={item} />;
-const keyExtractor = item => item.mbid;
+const keyExtractor = item => item.url;
 
 const AlbumList = ({ albums, isFetching }) => (
     <View>
-        {(albums.length > 0 && !isFetching) &&
+        {albums.length > 0 &&
             <FlatList
                 data={albums}
                 renderItem={renderItem}
                 keyExtractor={keyExtractor}
                 contentContainerStyle={styles.list} />}
-        <Loading visible={isFetching} />
+        {isFetching && <Loading visible={true} />}
     </View>
 );
 

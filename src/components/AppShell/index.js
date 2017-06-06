@@ -18,8 +18,10 @@ class AppShell extends Component {
                     drawerWidth={300}
                     drawerPosition={DrawerLayoutAndroid.positions.Left}
                     renderNavigationView={() => null}>
-                    <ToolbarAndroid 
-                        navIcon={require('../../images/ic_menu_white_48dp.png')}
+                    <ToolbarAndroid
+                        title="Moosic"
+                        titleColor="#ffffff"
+                        navIcon={require('../../../assets/images/ic_menu_white_48dp.png')}
                         style={styles.toolbar}
                         onIconClicked={this.openDrawer}
                     />

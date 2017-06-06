@@ -17,8 +17,17 @@ export default StyleSheet.create({
     },
     albumInfo: {
         flex: 1,
-        padding: 10,
+        padding: 8,
     },
-    name: { color: '#fff', fontSize: 16 },
-    artist: { color: '#fff', fontSize: 12 }
+    name: {
+        color: '#ffffff',
+        fontSize: 16,
+        fontFamily: 'Lato'
+    },
+    artist: {
+        color: '#ffffff',
+        fontSize: 12,
+        fontFamily: 'Lato',
+        marginTop: 5
+    }
 });
