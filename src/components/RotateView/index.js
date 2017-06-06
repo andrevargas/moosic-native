@@ -4,7 +4,7 @@ import { Animated, Easing } from 'react-native';
 class RotateView extends Component {
     constructor() {
         super();
-        this.state = { rotateValue: new Animated.Value(0) }
+        this.state = { rotateValue: new Animated.Value(0) };
     }
     componentDidMount() {
         this.runAnimation();

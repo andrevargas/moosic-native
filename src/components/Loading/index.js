@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Image } from 'react-native';
 import FadeView from '../FadeView';
 import RotateView from '../RotateView';

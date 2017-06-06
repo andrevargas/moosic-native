@@ -14,7 +14,7 @@ class AppShell extends Component {
         return (
             <View style={styles.appShell}>
                 <DrawerLayoutAndroid
-                    ref={ref => this._drawer = ref}
+                    ref={ref => { this._drawer = ref; }}
                     drawerWidth={300}
                     drawerPosition={DrawerLayoutAndroid.positions.Left}
                     renderNavigationView={() => null}>

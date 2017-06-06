@@ -4,7 +4,7 @@ import { LASTFM_REQUEST_URL } from '../config';
 export default class LastFMApi {
 
     static getWorldTopArtists() {
-        
+
         const options = {
             method: 'chart.getTopArtists',
             limit: 10
@@ -36,4 +36,4 @@ export default class LastFMApi {
 
     }
 
-};
+}
