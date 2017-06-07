@@ -6,7 +6,7 @@ import styles from './styles';
 
 const Loading = () => (
     <FadeView>
-        <RotateView style={styles.view}>
+        <RotateView style={styles.view} infinite>
             <Image
                 source={require('../../../assets/images/logo.png')}
                 style={styles.image}

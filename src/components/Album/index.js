@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import PropTypes from 'prop-types';
 import FadeView from '../FadeView';
 import styles from './styles';
 
@@ -12,5 +13,9 @@ const Album = ({ album }) => (
         </View>
     </FadeView>
 );
+
+Album.propTypes = {
+    album: PropTypes.object.isRequired
+};
 
 export default Album;

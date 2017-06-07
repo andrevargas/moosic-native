@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
+import PropTypes from 'prop-types';
 import Album from '../Album';
 import Loading from '../Loading';
 import styles from './styles';
@@ -15,8 +16,13 @@ const AlbumList = ({ albums, isFetching }) => (
                 renderItem={renderItem}
                 keyExtractor={keyExtractor}
                 contentContainerStyle={styles.list} />}
-        {isFetching && <Loading visible={true} />}
+        {isFetching && <Loading />}
     </View>
 );
+
+AlbumList.propTypes = {
+    albums: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+    isFetching: PropTypes.bool
+};
 
 export default AlbumList;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Animated, Easing } from 'react-native';
+import PropTypes from 'prop-types';
 
 class FadeView extends Component {
     constructor() {
@@ -7,15 +8,20 @@ class FadeView extends Component {
         this.state = { fadeValue: new Animated.Value(0) };
     }
     componentDidMount() {
-        this.runAnimation(1);
+        this.runAnimation({
+            toValue: 1,
+            duration: this.props.fadeInDuration
+        });
     }
     componentWillUmount() {
-        this.runAnimation(0);
+        this.runAnimation({
+            toValue: 0,
+            duration: this.props.fadeOutDuration
+        });
     }
-    runAnimation(toValue) {
+    runAnimation(config) {
         Animated.timing(this.state.fadeValue, {
-            toValue,
-            duration: 500,
+            ...config,
             easing: Easing.ease
         }).start();
     }
@@ -31,5 +37,16 @@ class FadeView extends Component {
         );
     }
 }
+
+FadeView.defaultProps = {
+    fadeInDuration: 500,
+    fadeOutDuration: 500
+};
+
+FadeView.propTypes = {
+    ...Animated.View.propTypes,
+    fadeInDuration: PropTypes.number,
+    fadeOutDuration: PropTypes.number
+};
 
 export default FadeView;
